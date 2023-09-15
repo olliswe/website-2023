@@ -1,6 +1,6 @@
 import { type ReactElement } from 'react';
 import Link from 'next/link';
-import { Page, Codepen, CollageFrame, DashboardSpeed } from 'iconoir-react';
+import {TransitionRight} from 'iconoir-react';
 import { Animator, Animated, aaVisibility, aa, BleepsOnAnimator } from '@arwes/react';
 import type { BleepNames } from 'src/types';
 import { Button } from 'src/ui';
@@ -13,10 +13,11 @@ const PageIndex = (): ReactElement => {
         .page {
           flex: 1;
           display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
         }
-
+        
         .container {
           display: grid;
           row-gap: 1rem;
@@ -64,7 +65,7 @@ const PageIndex = (): ReactElement => {
           }
 
           .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
           }
 
           .nav {
@@ -80,56 +81,45 @@ const PageIndex = (): ReactElement => {
           <Animated className='container' animated={aa('y', 12, 0)}>
             <Animator>
               <Animated as='h1' className='title' animated={[aaVisibility()]}>
-                <img
-                  role='heading'
-                  className='logo'
-                  src='/logotype.png'
-                  alt='Arwes Project'
-                  title='Arwes Project'
-                />
+                OLIVERIYER
               </Animated>
             </Animator>
 
-            <Animator>
-              <Animated as='h2' className='subtitle' animated={[aaVisibility(), aa('scaleX', 1, 1)]}>
-                Futuristic Sci-Fi UI Web Framework
-              </Animated>
-            </Animator>
 
             <Animator>
               <nav className='nav'>
                 <Animated className='nav-item' animated={[aaVisibility(), aa('x', -24, 0)]}>
                   <Link href='/src/pages/docs'>
                     <Button size='small' tabIndex={-1} title='Go to Documentation'>
-                      <Page className={hiddenSMDown} />
-                      <span>Docs</span>
+                      <TransitionRight className={hiddenSMDown} />
+                      <span>GET IN TOUCH</span>
                     </Button>
                   </Link>
                 </Animated>
-                <Animated className='nav-item' animated={[aaVisibility(), aa('x', -12, 0)]}>
-                  <Link href='/src/pages/samples'>
-                    <Button size='small' tabIndex={-1} title='Go to Samples'>
-                      <CollageFrame className={hiddenSMDown} />
-                      <span>Samples</span>
-                    </Button>
-                  </Link>
-                </Animated>
-                <Animated className='nav-item' animated={[aaVisibility(), aa('x', 12, 0)]}>
-                  <a href='/play'>
-                    <Button size='small' tabIndex={-1} title='Go to Playground'>
-                      <Codepen className={hiddenSMDown} />
-                      <span>Play</span>
-                    </Button>
-                  </a>
-                </Animated>
-                <Animated className='nav-item' animated={[aaVisibility(), aa('x', 24, 0)]}>
-                  <a href='/perf'>
-                    <Button size='small' tabIndex={-1} title='Go to Performance'>
-                      <DashboardSpeed className={hiddenSMDown} />
-                      <span>Perf</span>
-                    </Button>
-                  </a>
-                </Animated>
+                {/*<Animated className='nav-item' animated={[aaVisibility(), aa('x', -12, 0)]}>*/}
+                {/*  <Link href='/src/pages/samples'>*/}
+                {/*    <Button size='small' tabIndex={-1} title='Go to Samples'>*/}
+                {/*      <CollageFrame className={hiddenSMDown} />*/}
+                {/*      <span>Samples</span>*/}
+                {/*    </Button>*/}
+                {/*  </Link>*/}
+                {/*</Animated>*/}
+                {/*<Animated className='nav-item' animated={[aaVisibility(), aa('x', 12, 0)]}>*/}
+                {/*  <a href='/play'>*/}
+                {/*    <Button size='small' tabIndex={-1} title='Go to Playground'>*/}
+                {/*      <Codepen className={hiddenSMDown} />*/}
+                {/*      <span>Play</span>*/}
+                {/*    </Button>*/}
+                {/*  </a>*/}
+                {/*</Animated>*/}
+                {/*<Animated className='nav-item' animated={[aaVisibility(), aa('x', 24, 0)]}>*/}
+                {/*  <a href='/perf'>*/}
+                {/*    <Button size='small' tabIndex={-1} title='Go to Performance'>*/}
+                {/*      <DashboardSpeed className={hiddenSMDown} />*/}
+                {/*      <span>Perf</span>*/}
+                {/*    </Button>*/}
+                {/*  </a>*/}
+                {/*</Animated>*/}
               </nav>
             </Animator>
           </Animated>

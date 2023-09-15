@@ -53,7 +53,7 @@ export const logo = style({
 
   '@media': {
     '(min-width: 900px)': {
-      height: '1.5rem'
+      height: '3rem'
     }
   }
 });

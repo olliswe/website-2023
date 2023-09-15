@@ -1,23 +1,22 @@
 import 'src/styles/global.css';
 
-import type { ReactElement } from 'react';
-import { type NextPage } from 'next';
-import { type AppProps } from 'next/app';
+import type {ReactElement} from 'react';
+import {type NextPage} from 'next';
+import {type AppProps} from 'next/app';
 import Head from 'next/head';
-import { useEffect } from 'react';
-import { useAtomValue } from 'jotai';
+import {useAtomValue} from 'jotai';
 import {
-  type AnimatorGeneralProviderSettings,
-  type BleepsProviderSettings,
-  AnimatorGeneralProvider,
   Animator,
-  BleepsProvider
+  AnimatorGeneralProvider,
+  type AnimatorGeneralProviderSettings,
+  BleepsProvider,
+  type BleepsProviderSettings
 } from '@arwes/react';
 
-import type { BleepNames } from 'src/types';
-import { MainLayout } from 'src/ui';
-import { Header } from 'src/containers';
-import { setupGoogleFonts, atomMotion, atomAudio } from 'src/utils';
+import type {BleepNames} from 'src/types';
+import {MainLayout} from 'src/ui';
+import {Header} from 'src/containers';
+import {atomAudio} from 'src/utils';
 
 interface ClientAppProps extends AppProps {
   Component: NextPage
@@ -111,29 +110,24 @@ const bleepsSettings: BleepsProviderSettings<BleepNames> = {
 const ClientApp = (props: ClientAppProps): ReactElement => {
   const { Component, pageProps } = props;
 
-  useEffect(() => {
-    setupGoogleFonts();
-  }, []);
-
-  const motion = useAtomValue(atomMotion);
   const audio = useAtomValue(atomAudio);
 
   return (
-    <AnimatorGeneralProvider {...animatorsSettings} disabled={!motion}>
+    <AnimatorGeneralProvider {...animatorsSettings}>
       <BleepsProvider {...bleepsSettings} common={{ disabled: !audio }}>
         <Head>
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-          <title>Arwes</title>
+          <title>Oliver Iyer</title>
           <meta name="description" content="Futuristic Sci-Fi UI Web Framework." />
-          <meta property="og:title" content="Arwes" />
-          <meta property="og:site_name" content="Arwes" />
+          <meta property="og:title" content="Oliver Iyer" />
+          <meta property="og:site_name" content="Oliver Iyer" />
           <meta property="og:description" content="Futuristic Sci-Fi UI Web Framework." />
           <meta property="og:image" content="https://next.arwes.dev/arwes.jpg" />
           <meta property="og:url" content="https://next.arwes.dev" />
           <meta property="og:type" content="website" />
-          <meta name="twitter:image:alt" content="Arwes" />
+          <meta name="twitter:image:alt" content="Oliver Iyer" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@arwesjs" />
         </Head>

@@ -23,11 +23,11 @@ const Logo = (props: LogoProps): ReactElement => {
       animated={animated}
       onClick={() => bleeps.click?.play()}
     >
-      <Link className={classes.link} href='/' title='Arwes Project'>
+      <Link className={classes.link} href='/' title='Oliver Iyer'>
         <img
           className={classes.logo}
           src='/logo.png'
-          alt='Arwes Project'
+          alt='oi'
         />
         {children}
       </Link>

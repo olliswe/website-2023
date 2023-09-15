@@ -12,7 +12,7 @@ export const root = style({
   height: '24px',
   lineHeight: '24px',
   fontSize: 12,
-  fontFamily: "'Titillium Web', sans-serif",
+  fontFamily: "'oli-regular', sans-serif",
   fontWeight: '400',
   textTransform: 'uppercase',
   textDecoration: 'none',

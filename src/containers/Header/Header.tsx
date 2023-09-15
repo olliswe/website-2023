@@ -9,17 +9,15 @@ import {
   Discord,
   GitHub,
   Heart,
-  Keyframes,
   Menu as MenuIcon,
   Page,
-  RemoveKeyframes,
   SoundHigh,
   SoundOff,
   Twitter
 } from 'iconoir-react';
 import {aa, aaOpacity, aaVisibility, Animator, AnimatorGeneralProvider, cx} from '@arwes/react';
 
-import {atomAudio, atomMotion} from 'src/utils';
+import {atomAudio} from 'src/utils';
 import {hiddenLG, hiddenLGDown, hiddenSMDown, hiddenXLDown} from 'src/styles';
 import {HeaderLayout, type HeaderLayoutProps, Logo, LogoType, Menu, MenuItem} from 'src/ui';
 import {ModalNavigate} from '../ModalNavigate';
@@ -29,7 +27,6 @@ interface HeaderProps extends HeaderLayoutProps {}
 
 const Header = (props: HeaderProps): ReactElement => {
   const router = useRouter();
-  const [motion, setMotion] = useAtom(atomMotion);
   const [audio, setAudio] = useAtom(atomAudio);
   const [showModal, setShowModal] = useState(false);
 
@@ -165,17 +162,6 @@ const Header = (props: HeaderProps): ReactElement => {
               </Animator>
             </Menu>
             <Menu>
-              <Animator>
-                <MenuItem className={cx(classes.menuItem, hiddenLGDown)} animated={rightItemAnimation}>
-                  <button
-                    className={classes.button}
-                    title={motion ? 'Disable motion' : 'Enable motion'}
-                    onClick={() => setMotion(!motion)}
-                  >
-                    {motion ? <Keyframes /> : <RemoveKeyframes />}
-                  </button>
-                </MenuItem>
-              </Animator>
               <Animator>
                 <MenuItem className={cx(classes.menuItem, hiddenLGDown)} animated={rightItemAnimation}>
                   <button

@@ -54,6 +54,7 @@ const Button = (props: ButtonProps): ReactElement => {
       animated={animated}
       tabIndex={tabIndex}
       title={title}
+      onMouseEnter={() => bleeps.intro?.play()}
       onClick={() => {
         onClick?.();
         bleeps.click?.play();
