@@ -9,12 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@arwes/react": "^1.0.0-alpha.23",
+    "@emotion/react": "^11.11.1",
     "@types/node": "20.6.1",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "@vanilla-extract/css": "^1.13.0",
+    "@vanilla-extract/next-plugin": "^2.3.0",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "iconoir-react": "^6.11.0",
+    "jotai": "^2.4.2",
     "next": "13.4.19",
+    "prism-react-renderer": "^2.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.2.2"
