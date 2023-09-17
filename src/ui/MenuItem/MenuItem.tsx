@@ -1,14 +1,14 @@
-import { type ReactElement, type ReactNode } from 'react';
-import { type AnimatedProp, Animated, cx, useBleeps } from '@arwes/react';
+import { type ReactElement, type ReactNode } from "react";
+import { type AnimatedProp, Animated, cx, useBleeps } from "@arwes/react";
 
-import type { BleepNames } from 'src/types';
-import * as classes from './MenuItem.css';
+import type { BleepNames } from "src/types";
+import * as classes from "./MenuItem.css";
 
 interface MenuItemProps {
-  className?: string
-  animated?: AnimatedProp
-  active?: boolean
-  children?: ReactNode
+  className?: string;
+  animated?: AnimatedProp;
+  active?: boolean;
+  children?: ReactNode;
 }
 
 const MenuItem = (props: MenuItemProps): ReactElement => {
@@ -18,10 +18,11 @@ const MenuItem = (props: MenuItemProps): ReactElement => {
 
   return (
     <Animated
-      as='li'
+      as="li"
       className={cx(classes.root, active && classes.active, className)}
       animated={animated}
       onClick={() => bleeps.click?.play()}
+      onMouseEnter={() => bleeps.intro?.play()}
     >
       {children}
     </Animated>

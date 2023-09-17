@@ -8,18 +8,19 @@ import {
   DashboardSpeed,
   Discord,
   GitHub,
-  Heart,
+  Instagram, LinkedIn,
   Menu as MenuIcon,
   Page,
   SoundHigh,
-  SoundOff, Spotify,
+  SoundOff,
+  Spotify,
   Twitter
 } from 'iconoir-react';
 import {aa, aaOpacity, aaVisibility, Animator, AnimatorGeneralProvider, cx} from '@arwes/react';
 
 import {atomAudio} from 'src/utils';
 import {hiddenLG, hiddenLGDown, hiddenSMDown, hiddenXLDown} from 'src/styles';
-import {HeaderLayout, type HeaderLayoutProps, Logo, LogoType, Menu, MenuItem} from 'src/ui';
+import {HeaderLayout, type HeaderLayoutProps, Menu, MenuItem} from 'src/ui';
 import {ModalNavigate} from '../ModalNavigate';
 import * as classes from './Header.css';
 
@@ -109,25 +110,7 @@ const Header = (props: HeaderProps): ReactElement => {
             )}
           </Animator>
         }
-        center={
-          <>
-            {router.asPath.startsWith('/docs') && (
-              <Animator>
-                <Menu className={hiddenLGDown} animated={aaVisibility()}>
-                  <MenuItem className={classes.menuItem} active={router.asPath.includes('/docs/develop')}>
-                    <Link href="/docs/develop">Develop</Link>
-                  </MenuItem>
-                  <MenuItem className={classes.menuItem} active={router.asPath.includes('/docs/design')}>
-                    <Link href="/docs/design">Design</Link>
-                  </MenuItem>
-                  <MenuItem className={classes.menuItem} active={router.asPath.includes('/docs/community')}>
-                    <Link href="/docs/community">Community</Link>
-                  </MenuItem>
-                </Menu>
-              </Animator>
-            )}
-          </>
-        }
+        center={<></>}
         right={
           <Animator
             combine
@@ -137,29 +120,22 @@ const Header = (props: HeaderProps): ReactElement => {
             <Menu className={hiddenLGDown}>
               <Animator>
                 <MenuItem className={classes.menuItem} animated={rightItemAnimation}>
-                  <a href='https://github.com/sponsors/romelperez' target='sponsor' title='Sponsor'>
-                    <Heart />
-                  </a>
-                </MenuItem>
-              </Animator>
-              <Animator>
-                <MenuItem className={classes.menuItem} animated={rightItemAnimation}>
-                  <a href='https://github.com/arwes/arwes' target='github' title='Go to GitHub'>
+                  <a href='https://github.com/olliswe' target='github' title='Go to GitHub'>
                     <GitHub />
                   </a>
                 </MenuItem>
               </Animator>
               <Animator>
                 <MenuItem className={classes.menuItem} animated={rightItemAnimation}>
-                  <a href='https://discord.gg/s5sbTkw' target='discord' title='Go to Discord'>
-                    <Discord />
+                  <a href='https://www.linkedin.com/in/oliver-iyer/' target='linkedin' title='LinkedIn'>
+                    <LinkedIn />
                   </a>
                 </MenuItem>
               </Animator>
               <Animator>
                 <MenuItem className={classes.menuItem} animated={rightItemAnimation}>
-                  <a href='https://twitter.com/arwesjs' target='twitter' title='Go to Twitter'>
-                    <Twitter />
+                  <a href='https://instagram.com/olliswe' target='instagram' title='Instagram'>
+                    <Instagram />
                   </a>
                 </MenuItem>
               </Animator>

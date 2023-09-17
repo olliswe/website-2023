@@ -47,7 +47,7 @@ const ModalContent = (props: ModalContentProps): ReactElement => {
               </Animated>
               <Animated
                 as='a'
-                href='https://github.com/arwes/arwes'
+                href='https://github.com/olliswe'
                 target='github'
                 className={cx(linkPrimary, classes.surfacePrimary, classes.socialLink)}
                 animated={[aa('y', '1rem', 0, 0)]}
