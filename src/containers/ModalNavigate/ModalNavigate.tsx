@@ -30,7 +30,7 @@ const ModalContent = (props: ModalContentProps): ReactElement => {
 
   return (
     <ModalLayout
-      title='Navigate'
+      title='OLIVERIYER'
       footer={
         <>
           <Animator>

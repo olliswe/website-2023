@@ -12,7 +12,7 @@ import {
   Menu as MenuIcon,
   Page,
   SoundHigh,
-  SoundOff,
+  SoundOff, Spotify,
   Twitter
 } from 'iconoir-react';
 import {aa, aaOpacity, aaVisibility, Animator, AnimatorGeneralProvider, cx} from '@arwes/react';
@@ -25,10 +25,13 @@ import * as classes from './Header.css';
 
 interface HeaderProps extends HeaderLayoutProps {}
 
+
+
 const Header = (props: HeaderProps): ReactElement => {
   const router = useRouter();
   const [audio, setAudio] = useAtom(atomAudio);
   const [showModal, setShowModal] = useState(false);
+  const [showSpotify, setShowSpotify] = useState(false);
 
   // The pages where the page content elements are floating instead
   // of being container by containers.
@@ -43,20 +46,20 @@ const Header = (props: HeaderProps): ReactElement => {
         {...props}
         hasFrame={!isFloatingRoutePath}
         left={
-          <Animator combine manager='stagger'>
+        <Animator>
+          <>
             <Animator>
-              <Logo animated={aaVisibility()}>
-                {!isFloatingRoutePath && (
-                  <Animator merge>
-                    <LogoType
-                      className={hiddenSMDown}
-                      animated={leftItemAnimation}
-                    />
-                  </Animator>
-                )}
-              </Logo>
+              <MenuItem className={classes.menuItem} animated={rightItemAnimation}>
+                <a   title='Spotify' onClick={()=>setShowSpotify((prev)=>!prev)}>
+                  <Spotify />
+                </a>
+              </MenuItem>
             </Animator>
-            {!isFloatingRoutePath && (
+            <div style={{opacity: showSpotify ? 1 :0 , transition: 'opacity 0.3s ease-in-out'}}>
+            <iframe  src="https://open.spotify.com/embed/playlist/58y3p9CODhvsSoGLucWyDf?utm_source=generator&theme=0" width="400" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"/>
+            </div>
+          </>
+          {!isFloatingRoutePath && (
               <Animator combine manager='stagger' duration={{ stagger: 0.03 }}>
                 <Menu>
                   <Animator>
